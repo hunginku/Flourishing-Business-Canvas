@@ -146,6 +146,33 @@ main{max-width:1800px;margin:0 auto;padding:18px}
  body.print-connections .analysis-card,body.print-roadmap .roadmap-section{break-inside:avoid!important}
 }
 
+
+/* Visual key takeaways for dense analysis tabs */
+.visual-takeaway{background:#fff;border:1px solid #e8b9b9;border-left:7px solid #b4232d;border-radius:10px;padding:15px 17px;margin:12px 0 16px;box-shadow:0 2px 8px #6f1d1d0c}
+.visual-takeaway .eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:#a21d27;margin-bottom:5px}
+.visual-takeaway h2{font-size:18px;line-height:1.25;margin:0 0 6px;color:#7e1821}
+.visual-takeaway p{margin:0;color:#39433e;font-size:13px}
+.takeaway-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0 16px}
+.takeaway-card{background:#fff;border:1px solid #e2d9d7;border-top:4px solid #b4232d;border-radius:9px;padding:12px;min-width:0}
+.takeaway-card .symbol{font-size:20px;margin-bottom:5px}
+.takeaway-card b{display:block;color:#8e2028;font-size:13px;margin-bottom:4px}
+.takeaway-card p{font-size:12px;line-height:1.4;margin:0;color:#3e4943}
+.priority-visual{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+.priority-visual article{border:1px solid #e3d7d5;border-radius:9px;background:#fff;padding:13px;position:relative;overflow:hidden}
+.priority-visual article:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:#b4232d}
+.priority-visual .num{font-size:10px;font-weight:800;color:#a21d27;letter-spacing:.1em}
+.priority-visual h3{font-size:14px;margin:5px 0;color:#273b34}
+.priority-visual p{font-size:12px;margin:0;color:#53615b}
+.phase-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:12px 0 16px;border-radius:9px;overflow:hidden;border:1px solid #e2d6d4}
+.phase-flow div{padding:12px 14px;background:#fff;border-right:1px solid #eadfdd;position:relative}
+.phase-flow div:last-child{border-right:0}
+.phase-flow strong{display:block;color:#a21d27;font-size:11px;letter-spacing:.06em}
+.phase-flow b{display:block;font-size:14px;margin:3px 0;color:#263a33}
+.phase-flow span{font-size:11px;color:#5b655f}
+.decision-rule{background:#fff5f4;border:1px solid #e8b9b9;border-radius:9px;padding:12px 14px;margin:12px 0;color:#54282b;font-size:13px}
+@media(max-width:850px){.takeaway-grid,.priority-visual,.phase-flow{grid-template-columns:1fr}.phase-flow div{border-right:0;border-bottom:1px solid #eadfdd}}
+@media print{.visual-takeaway,.takeaway-card,.priority-visual article,.phase-flow div,.decision-rule{break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
 </style></head>
 <body>
 <header><h1 id="projectTitle" contenteditable="true" spellcheck="false">Flourishing Business Canvas v2.1 — IBM Scenario Analysis</h1>
@@ -179,6 +206,16 @@ main{max-width:1800px;margin:0 auto;padding:18px}
 <section class="outcomes" id="outcomesSection"><h2 id="outcomesHeading" contenteditable="true" data-meta="outcomesHeading">OUTCOMES</h2><div id="outcomes" contenteditable="true"></div></section>
 <section id="connectionsPanel">
  <div class="analysis-intro"><b>How to read this view:</b> Each chain connects scenario conditions to stakeholder needs, IBM capabilities, value creation or destruction, and business outcomes. <b>Scenario-grounded</b> means the underlying condition appears in the supplied story; <b>FBC interpretation</b> explains its business-model effect; <b>[ANALYSIS]</b> is a proposed strategic response or causal relationship, not a stated scenario event. Edit any text directly. Changes autosave in this browser and are included in the JSON export.</div>
+ <section class="visual-takeaway" aria-label="Connection analysis key takeaway">
+  <div class="eyebrow">Key takeaway · Across both scenarios</div>
+  <h2>IBM’s strongest strategy is to create more value while becoming less dependent on stable global conditions and unlimited resources.</h2>
+  <p>The scenarios point to three mutually reinforcing capabilities: resilient regional operations, trustworthy AI, and resource-aware computing. These are strategic responses derived from the scenarios—not announced IBM commitments.</p>
+ </section>
+ <div class="takeaway-grid" aria-label="Scenario insights at a glance">
+  <article class="takeaway-card"><div class="symbol">⚡</div><b>5-year lens · Resource pressure</b><p>AI growth is constrained by energy, water, hardware and supply uncertainty. The response is greater useful output from available infrastructure—not capacity expansion alone.</p></article>
+  <article class="takeaway-card"><div class="symbol">🌐</div><b>20-year lens · Fragmentation</b><p>Digital borders and supply disruption make regional continuity and local partnerships essential, while interoperability should be preserved where possible.</p></article>
+  <article class="takeaway-card"><div class="symbol">🛡️</div><b>Black Swan lens · Trust & adaptation</b><p>The Impossible Chip and Resource Dividend test resource strategy; the Great Disconnection and Resilience Test test continuity, verification and recovery.</p></article>
+ </div>
  <div class="analysis-grid" id="connectionCards"></div>
  <section class="matrix-wrap response-map" aria-label="Responses to implications mapped to FBC factors">
   <h2>From Responses to Implications to FBC Factors</h2>
@@ -198,11 +235,33 @@ main{max-width:1800px;margin:0 auto;padding:18px}
   <p>Score each priority from 1 (low) to 5 (high). The three criteria are equally weighted in this first-pass assessment. Scores are analytical judgments based on the scenario narratives and FBC connections—not IBM performance measurements.</p>
   <table class="priority-table"><thead><tr><th>Strategic priority</th><th>Cross-scenario relevance</th><th>Value creation</th><th>Strategic urgency</th><th>Average</th><th>Rank</th></tr></thead><tbody id="priorityRows"></tbody></table>
   <div class="matrix-summary" id="prioritySummary" aria-live="polite"></div>
+ <div class="priority-visual" aria-label="Three strategic priorities">
+  <article><div class="num">PRIORITY 01 · CROSS-SCENARIO FOUNDATION</div><h3>Regional Resilience with Interoperability</h3><p>Keep essential services operating across regional rules, disruptions and supply constraints—without creating unnecessary silos.</p></article>
+  <article><div class="num">PRIORITY 02 · TRUST & ASSURANCE</div><h3>Trusted, Verifiable AI</h3><p>Build verification, security testing, auditability and transparent recovery into the AI lifecycle.</p></article>
+  <article><div class="num">PRIORITY 03 · RESOURCE PRODUCTIVITY</div><h3>Resource-Aware Computing</h3><p>Improve compute, energy, water and hardware productivity while tracking absolute resource use and rebound effects.</p></article>
+ </div>
+ <div class="decision-rule"><b>How to interpret the ranking:</b> Regional resilience is the strongest overall cross-scenario foundation. Trusted, Verifiable AI and Resource-Aware Computing are co-equal second-tier priorities; their urgency shifts with the scenario horizon.</div>
   <div class="matrix-note"><b>Scoring guide:</b> Cross-scenario relevance = strength across both time horizons and Black Swans. Value creation = potential to create durable value for IBM and stakeholders. Strategic urgency = consequence of delaying action, given the scenario conditions. Edit the scores to reflect your own assessment; rankings update automatically. Export JSON to retain your edits.</div>
  </section>
 </section>
 <section id="roadmapPanel">
  <div class="analysis-intro"><b>Roadmap purpose:</b> Turn the three strategic priorities into a practical sequence of capabilities, initiatives and decision points. The roadmap is a proposed response to the scenarios, not a statement of IBM's announced plans. Edit the tables directly; changes autosave in this browser and are included in the JSON export.</div>
+ <section class="visual-takeaway" aria-label="Strategic roadmap key takeaway">
+  <div class="eyebrow">Key takeaway · Roadmap logic</div>
+  <h2>Build the evidence first. Scale proven capabilities second. Institutionalize resilience over time.</h2>
+  <p>The roadmap is deliberately staged: establish baselines and pilots before scaling, then adapt the operating model as geopolitical, technology and resource conditions change.</p>
+ </section>
+ <div class="phase-flow" aria-label="Three-phase roadmap summary">
+  <div><strong>PHASE 1 · 2026–2028</strong><b>Establish the foundations</b><span>Map exposure · Set baselines · Pilot capabilities</span></div>
+  <div><strong>PHASE 2 · 2029–2031</strong><b>Scale what works</b><span>Validate outcomes · Expand repeatable patterns</span></div>
+  <div><strong>PHASE 3 · 2032–2046</strong><b>Adapt and institutionalize</b><span>Embed resilience · Rebalance as conditions shift</span></div>
+ </div>
+ <div class="takeaway-grid" aria-label="Roadmap workstreams">
+  <article class="takeaway-card"><div class="symbol">🌐</div><b>Regional resilience</b><p>Modular regional infrastructure, diversified suppliers, continuity planning and interoperability.</p></article>
+  <article class="takeaway-card"><div class="symbol">🛡️</div><b>Trusted AI</b><p>AI inventories, verification, red-team testing, incident response and transparent accountability.</p></article>
+  <article class="takeaway-card"><div class="symbol">♻️</div><b>Resource-aware computing</b><p>Workload orchestration, efficient cooling, hardware-life extension and absolute resource measurement.</p></article>
+ </div>
+ <div class="decision-rule"><b>Executive decision rule:</b> Do not scale an initiative just because it works technically. Scale only when evidence shows customer value, operational resilience, security and measurable resource performance.</div>
  <div class="roadmap-section"><h2>Roadmap at a glance</h2><p class="roadmap-note">The sequence moves from understanding exposure, to proving solutions, to embedding resilient capabilities across IBM's operating model.</p><div class="roadmap-overview">
  <article class="roadmap-phase"><div class="roadmap-period">PHASE 1 · 2026–2028</div><h3>Establish the foundations</h3><ul><li>Map critical workloads, regional dependencies and supplier exposure.</li><li>Set AI system inventories, risk tiers and verification requirements.</li><li>Measure energy, water, compute utilization and hardware lifecycles.</li><li>Run focused pilots for regional recovery, AI assurance and workload efficiency.</li></ul><b>Phase outcome:</b> A trusted baseline and evidence-backed pilot portfolio.</article>
  <article class="roadmap-phase"><div class="roadmap-period">PHASE 2 · 2029–2031</div><h3>Scale what works</h3><ul><li>Expand modular regional service patterns and tested recovery procedures.</li><li>Integrate AI validation, provenance and incident response into product lifecycles.</li><li>Scale workload orchestration, efficient cooling and hardware-life extension.</li><li>Compare results across regions and customer environments before wider rollout.</li></ul><b>Phase outcome:</b> Repeatable capabilities with measurable service, trust and resource benefits.</article>
