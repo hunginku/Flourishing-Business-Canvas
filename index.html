@@ -81,10 +81,75 @@ main{max-width:1600px;margin:20px auto;padding:0 16px}
 
 .roadmap-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.roadmap-phase{background:#f8faf8;border:1px solid #dce5de;border-top:4px solid #477b69;border-radius:8px;padding:14px;min-width:0}.roadmap-phase:nth-child(2){border-top-color:#b28c36}.roadmap-phase:nth-child(3){border-top-color:#6579a0}.roadmap-period{font-size:10px;font-weight:800;letter-spacing:.08em;color:#52635a}.roadmap-phase h3{font-size:16px;margin:7px 0 9px;color:#263b32}.roadmap-phase ul{padding-left:18px;margin:0 0 12px;font-size:13px;line-height:1.45}.roadmap-phase li{margin:0 0 6px}.roadmap-phase>b{font-size:12px;color:#344c40}.roadmap-callout{background:#eef3ef;border-left:4px solid #477b69;border-radius:4px;padding:11px 13px;font-size:13px;line-height:1.45}.workspace-note{margin:22px 0 4px;padding:13px 15px;border-top:1px solid var(--line);color:#53615b;font-size:12px;line-height:1.5}.workspace-note summary{cursor:pointer;color:#33443b;font-size:12px;font-weight:700}.workspace-note p{margin:7px 0 4px}
 @media(max-width:850px){.roadmap-overview{grid-template-columns:1fr}}
+
+/* FBC v2.1 poster-inspired final submission layout */
+body{background:#f1f0e9;color:#30352f}
+#context,.legend,.challenge{display:none!important}
+main{max-width:1800px;margin:0 auto;padding:18px}
+.fbc-context-bands{height:88px;position:relative;background:#126b5c;margin:14px 0 0;overflow:hidden;color:#fff;font-weight:800;letter-spacing:.06em}
+.fbc-context-bands .band-environment{position:absolute;inset:0 0 auto 0;height:88px;padding:10px 18px;font-size:20px}
+.fbc-context-bands .band-society{position:absolute;left:16%;right:7%;top:27px;height:61px;padding:8px 14px;background:#83a54d;font-size:18px}
+.fbc-context-bands .band-economy{position:absolute;left:26%;right:12%;top:52px;height:36px;padding:6px 12px;background:#d1ad36;color:#fff;font-size:16px}
+.fbc-poster-grid{display:grid;grid-template-columns:1.02fr 1.65fr 1.55fr 1.55fr .95fr;gap:5px;background:#126b5c;padding:0 5px 5px;align-items:stretch}
+.fbc-column{min-width:0;background:#f8f4e7;border:2px solid #fff;display:flex;flex-direction:column}
+.fbc-column-head{background:#d1ad36;color:#fff;padding:10px 12px 8px;min-height:66px}
+.fbc-column-head h3{font-size:clamp(13px,1.2vw,22px);margin:0 0 4px;font-weight:850;letter-spacing:.04em}
+.fbc-column-head p{font-size:9px;line-height:1.25;margin:0;color:#fff}
+.fbc-environment{background:#dce8e5}.fbc-environment .fbc-column-head{background:#126b5c}
+.fbc-process .fbc-column-head{background:#d1ad36}.fbc-value .fbc-column-head{background:#d1ad36}.fbc-people .fbc-column-head{background:#d1ad36}.fbc-actors{background:#dce8e5}.fbc-actors .fbc-column-head{background:#126b5c}
+.fbc-column .card{border:0;border-bottom:1px solid #aaa99d;border-radius:0;background:transparent;box-shadow:none;padding:12px 10px;flex:1;min-height:170px;overflow-wrap:anywhere}
+.fbc-column .card h2{font-size:clamp(11px,.95vw,16px);font-weight:800;text-transform:uppercase;margin:0 0 6px;color:#363a34}
+.fbc-column .card .hint{font-size:9px;color:#77786e;line-height:1.25;margin-bottom:7px}
+.fbc-column .card [contenteditable]{font-size:clamp(10px,.75vw,13px);line-height:1.36;white-space:pre-wrap;min-height:100px;outline-offset:2px}
+.fbc-column .card:last-child{border-bottom:0}
+#bottom{display:grid;grid-template-columns:1fr 1.55fr 1fr;gap:5px;margin:0;padding:5px;background:#126b5c;border:2px solid #fff;border-top:0}
+#bottom .card{border:1px solid #fff;border-radius:0;background:#f8f4e7;padding:14px 18px;min-width:0;box-shadow:none}
+#bottom .card h2{text-transform:uppercase;font-size:18px;margin:0 0 6px;color:#353a34}
+#bottom .card .hint{font-size:10px;color:#777;margin-bottom:8px}
+#bottom [contenteditable]{font-size:12px;line-height:1.4;white-space:pre-wrap;min-height:120px}
+#outcomesSection{margin:0;padding:0 18px 14px;background:#d1ad36;color:#fff;border:2px solid #fff;border-top:0}
+#outcomesHeading{font-size:24px;text-align:center;text-transform:uppercase;margin:8px 0;color:#fff}
+#outcomes{font-size:13px;line-height:1.45;max-width:1100px;margin:0 auto;white-space:pre-wrap;color:#fff}
+.challenge{border:1px solid #c9c7b8;background:#f8f4e7;padding:12px 16px;margin:10px 0 0}
+.challenge strong{font-size:13px;letter-spacing:.03em}
+.challenge #challenge{font-size:16px;font-weight:700;margin-top:7px}
+.challenge .small{font-size:10px;color:#666;margin-top:5px}
+@media(max-width:1050px){.fbc-poster-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fbc-context-bands{height:88px}#bottom{grid-template-columns:1fr}.fbc-column .card{min-height:140px}}
+@media print{body{background:#fff}header .toolbar,#context,.legend,.workspace-note{display:none!important}main{max-width:none;padding:0;margin:0}.fbc-poster-grid{grid-template-columns:1.02fr 1.65fr 1.55fr 1.55fr .95fr;break-inside:avoid}.fbc-column .card{min-height:0}#bottom{grid-template-columns:1fr 1.55fr 1fr}#outcomesSection{break-inside:avoid}}
+/* Single-sheet PDF export: print the currently selected screen as one landscape page. */
+@page{size:18in 12in landscape;margin:.16in}
+@media print{
+ html,body{width:100%;height:auto!important;margin:0!important;padding:0!important;overflow:visible!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+ body{zoom:.84}
+ header{position:static!important;box-shadow:none!important;padding:10px 16px!important;break-after:avoid!important}
+ header h1{font-size:20px!important}header p{font-size:11px!important}
+ main{width:21.1in!important;max-width:none!important;margin:0!important;padding:8px!important}
+ .meta{margin:0 0 6px!important;padding:7px!important;gap:6px!important}
+ .fbc-context-bands{margin-top:5px!important;height:70px!important}
+ .fbc-context-bands .band-environment{height:70px!important;font-size:18px!important}
+ .fbc-context-bands .band-society{top:22px!important;height:48px!important;font-size:16px!important}
+ .fbc-context-bands .band-economy{top:42px!important;height:28px!important;font-size:14px!important}
+ .fbc-poster-grid,#bottom,#outcomesSection{break-inside:avoid!important;page-break-inside:avoid!important}
+ .fbc-column .card{min-height:0!important;padding:7px 8px!important}
+ .fbc-column .card [contenteditable]{min-height:0!important;font-size:11px!important}
+ #bottom .card{padding:8px 12px!important}
+ #bottom [contenteditable]{min-height:0!important;font-size:11px!important}
+ #outcomesSection{padding:6px 12px!important}#outcomesHeading{font-size:19px!important;margin:4px 0!important}#outcomes{font-size:11px!important}
+ body.print-canvas #connectionsPanel,body.print-canvas #roadmapPanel{display:none!important}
+ body.print-connections #canvas,body.print-connections #bottom,body.print-connections #outcomesSection{display:none!important}
+ body.print-connections #connectionsPanel{display:block!important;break-inside:avoid!important}
+ body.print-connections #roadmapPanel{display:none!important}
+ body.print-roadmap #canvas,body.print-roadmap #bottom,body.print-roadmap #outcomesSection{display:none!important}
+ body.print-roadmap #roadmapPanel{display:block!important}
+ body.print-roadmap #connectionsPanel{display:none!important}
+ body.print-connections main,body.print-roadmap main{width:21.1in!important}
+ body.print-connections .analysis-card,body.print-roadmap .roadmap-section{break-inside:avoid!important}
+}
+
 </style></head>
 <body>
-<header><h1 id="projectTitle" contenteditable="true" spellcheck="false">IBM · Flourishing Business Canvas v2.1 — Editable Working Copy</h1>
-<p id="projectSubtitle" contenteditable="true" spellcheck="false">Scenario planning workspace · editable text · autosaves in this browser · export your work regularly</p>
+<header><h1 id="projectTitle" contenteditable="true" spellcheck="false">Flourishing Business Canvas v2.1 — IBM Scenario Analysis</h1>
+<p id="projectSubtitle" contenteditable="true" spellcheck="false">Editable FBC v2.1 working canvas · scenario selector, inline editing and export controls</p>
 <div class="toolbar">
 <select id="view" aria-label="Scenario view">
 <option value="5y">5-Year Scenario — The Era of Intelligent Abundance</option><option value="5ychip">5-Year Black Swan — The Impossible Chip</option><option value="5yswan">5-Year Black Swan — The Resource Dividend</option>
@@ -97,8 +162,8 @@ main{max-width:1600px;margin:20px auto;padding:0 16px}
 </div></header>
 <main>
 <div class="meta">
-<label>Organization / Project<input id="projectFor" value="IBM — enterprise technology, AI & hybrid cloud"></label>
-<label>Prepared by<input id="projectAuthor" value="Hung Vinh"></label>
+<label>Designed for<input id="projectFor" value="IBM — enterprise technology, AI & hybrid cloud"></label>
+<label>Designed by<input id="projectAuthor" value="Hung Vinh"></label>
 <label>Date of model<input id="modelDate" value="5-year / 20-year future scenarios"></label>
 <label>Today's date<input id="today" value="2026-11-05"></label>
 </div>
@@ -206,7 +271,7 @@ main{max-width:1600px;margin:20px auto;padding:0 16px}
  </tbody></table>
  <p class="roadmap-note"><b>Ranking clarification:</b> Trusted, Verifiable AI and Resource-Aware Computing both score 4.67/5 in the current matrix. They should be treated as co-equal second-tier priorities rather than implying a meaningful difference between them. Their sequencing may vary by scenario: resource efficiency is more immediate in the five-year story, while AI verification becomes critical in the Resilience Test.</p></div>
 </section>
-<div class="workspace-note"><b>About this working canvas</b><p>This canvas brings together the five-year and twenty-year IBM scenarios and uses the Flourishing Business Canvas v2.1 as its organizing framework. The five-year Challenge Question is taken directly from the scenario. The twenty-year Challenge Question is a working synthesis, since the scenario does not state one verbatim.</p><p>The roadmap, priorities and suggested actions are analytical recommendations developed from the scenario material; they should not be read as announced IBM commitments. This is an editable study workspace. Check the canvas licensing terms before sharing a modified version publicly.</p></div>
+<div class="workspace-note"><b>About this working canvas</b><p>This canvas brings together the five-year and twenty-year IBM scenarios and uses the Flourishing Business Canvas v2.1 as its organizing framework. The five-year Challenge Question is taken directly from the scenario. The twenty-year Challenge Question is a working synthesis, since the scenario does not state one verbatim.</p><p>The roadmap, priorities and suggested actions are analytical recommendations developed from the scenario material; they should not be read as announced IBM commitments. This is an editable study workspace based on the Flourishing Business Canvas v2.1 poster by Anthony Upward. The source poster indicates a Creative Commons Attribution–NoDerivatives 4.0 International license; consult the license before distributing a modified version.</p></div>
 </main>
 <script>
 const fields=[
@@ -465,8 +530,8 @@ document.getElementById("roadmapPanel").addEventListener("input",e=>{if(e.target
 restoreRoadmap();
 let active="5y";
 const projectMeta={
- title:"IBM · Flourishing Business Canvas v2.1 — Editable Working Copy",
- subtitle:"Scenario planning workspace · editable text · autosaves in this browser · export your work regularly",
+ title:"Flourishing Business Canvas v2.1 — IBM Scenario Analysis",
+ subtitle:"Editable FBC v2.1 working canvas · scenario selector, inline editing and export controls",
  projectFor:"IBM — enterprise technology, AI & hybrid cloud", author:"Hung Vinh",
  modelDate:"5-year / 20-year future scenarios", today:"2026-11-05",
  contextEnvironment:"ENVIRONMENT", contextSociety:"SOCIETY", contextEconomy:"ECONOMY", outcomesHeading:"OUTCOMES"
@@ -510,31 +575,28 @@ function render(){
  document.getElementById("questionNote").textContent=d.note;
  if(!projectMeta.modelDate || projectMeta.modelDate==="5-year / 20-year future scenarios") document.getElementById("modelDate").value=active.startsWith("5")?"5-year future scenario":"20-year future scenario";
  const canvas=document.getElementById("canvas");canvas.innerHTML="";
- const zone=(id,title,description,cls)=>{const el=document.createElement("section");el.className="system-zone "+cls;el.id=id;el.innerHTML=`<h3>${title}</h3><p class="zone-desc">${description}</p><div class="zone-grid"></div>`;return el;};
- const environment=zone("environmentZone",projectMeta.contextEnvironment,"The living systems and natural stocks that support, constrain and are affected by economic activity.","environment-zone");
- const society=zone("societyZone",projectMeta.contextSociety,"People, communities, institutions and relationships within which the enterprise operates.","society-zone");
- const economy=zone("economyZone",projectMeta.contextEconomy,"The enterprise model: how resources and activities create, deliver and affect value.","economy-zone");
- const intersection=(id,title,description)=>{const el=document.createElement("section");el.className="intersection-zone";el.id=id;el.innerHTML=`<h3>${title}</h3><p>${description}</p><div class="zone-grid"></div>`;return el;};
- const envEconomy=intersection("environmentEconomyIntersection","Environment × Economy","Resources connect the enterprise to energy, water, materials, land and infrastructure limits.");
- const societyEconomy=intersection("societyEconomyIntersection","Society × Economy","Partnerships and governance connect IBM's operating model to institutions, people, rules and accountability.");
- const addCards=(host,names)=>names.forEach(name=>{
-  const f=fields.find(x=>x[0]===name);const c=document.createElement("article");c.className="card";
-  c.innerHTML=`<h2>${name}</h2><div class="hint">${f[1]}</div><div contenteditable="true" data-field="${name}"></div>`;
-  c.querySelector("[contenteditable]").textContent=getContent(active,name);host.appendChild(c);
- });
- addCards(environment.querySelector(".zone-grid"),["Biophysical Stocks","Ecosystem Services"]);
- addCards(envEconomy.querySelector(".zone-grid"),["Resources"]);
- addCards(society.querySelector(".zone-grid"),["Relationships","Channels","Stakeholders","Actors","Needs"]);
- addCards(societyEconomy.querySelector(".zone-grid"),["Partnerships","Governance"]);
- addCards(economy.querySelector(".zone-grid"),["Activities","Value Co-Creations","Value Co-Destructions","Products / Services"]);
- environment.appendChild(society);
- society.appendChild(societyEconomy);
- society.appendChild(economy);
- environment.appendChild(envEconomy);
- canvas.appendChild(environment);
+ const contextBands=document.createElement("div");contextBands.className="fbc-context-bands";
+ contextBands.innerHTML=`<div class="band-environment">${projectMeta.contextEnvironment}</div><div class="band-society">${projectMeta.contextSociety}</div><div class="band-economy">${projectMeta.contextEconomy}</div>`;
+ canvas.appendChild(contextBands);
+ const posterGrid=document.createElement("div");posterGrid.className="fbc-poster-grid";
+ const makeColumn=(key,title,names,description)=>{
+   const col=document.createElement("section");col.className="fbc-column fbc-"+key;
+   const head=document.createElement("header");head.className="fbc-column-head";head.innerHTML=`<h3>${title}</h3><p>${description}</p>`;col.appendChild(head);
+   names.forEach(name=>{const f=fields.find(x=>x[0]===name);const c=document.createElement("article");c.className="card";
+     c.innerHTML=`<h2>${name}</h2><div class="hint">${f[1]}</div><div contenteditable="true" data-field="${name}"></div>`;
+     c.querySelector("[contenteditable]").textContent=getContent(active,name);col.appendChild(c);
+   });
+   posterGrid.appendChild(col);
+ };
+ makeColumn("environment","ENVIRONMENT",["Biophysical Stocks","Ecosystem Services"],"Natural stocks and living systems that support or are affected by the business.");
+ makeColumn("process","PROCESS",["Resources","Activities","Partnerships","Governance"],"What is required to create, organize and deliver value.");
+ makeColumn("value","VALUE",["Value Co-Creations","Value Co-Destructions","Products / Services"],"What value is created, reduced or exchanged through the business.");
+ makeColumn("people","PEOPLE",["Relationships","Channels","Stakeholders"],"How the business engages with and serves people and organizations.");
+ makeColumn("actors","ACTORS & NEEDS",["Actors","Needs"],"External actors and the needs that shape the system.");
+ canvas.appendChild(posterGrid);
  const bottom=document.getElementById("bottom");bottom.innerHTML="";
  ["Costs","Goals","Benefits"].forEach(name=>{
-  const c=document.createElement("article");c.className="card";c.innerHTML=`<h2>${name}</h2><div class="hint">${name==="Goals"?"Challenge Question and intended purpose":name==="Costs"?"Financial, social and environmental costs":"Financial, social and environmental benefits"}</div><div contenteditable="true" data-field="${name}"></div>`;
+  const c=document.createElement("article");c.className="card fbc-bottom-card";c.innerHTML=`<h2>${name}</h2><div class="hint">${name==="Goals"?"Challenge Question and intended purpose":name==="Costs"?"Financial, social and environmental costs":"Financial, social and environmental benefits"}</div><div contenteditable="true" data-field="${name}"></div>`;
   c.querySelector("[contenteditable]").textContent=name==="Goals"?(d.overrides.Goals||commonGoals):getContent(active,name);bottom.appendChild(c);
  });
  document.getElementById("outcomes").textContent=d.outcomes;
@@ -552,6 +614,9 @@ function save(){localStorage.setItem("ibmFBC_v2",JSON.stringify({data,projectMet
 function exportJSON(){collect();collectMeta();const blob=new Blob([JSON.stringify({title:projectMeta.title,version:5,projectMeta,data,connectionEdits,priorityScores,roadmapEdits,responseMapEdits:JSON.parse(localStorage.getItem("ibmFBC_responseMap")||"null")},null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="Flourishing_Business_Canvas_Project_Data.json";a.click();URL.revokeObjectURL(a.href)}
 function importJSON(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const obj=JSON.parse(r.result);if(!obj.data)throw Error("Missing data");Object.assign(data,obj.data);if(obj.projectMeta)Object.assign(projectMeta,obj.projectMeta);if(obj.connectionEdits){connectionEdits=obj.connectionEdits;localStorage.setItem("ibmFBC_connections",JSON.stringify(connectionEdits));}if(obj.priorityScores){priorityScores=obj.priorityScores;localStorage.setItem("ibmFBC_priorityScores",JSON.stringify(priorityScores));}if(obj.roadmapEdits){roadmapEdits=obj.roadmapEdits;localStorage.setItem("ibmFBC_roadmap",JSON.stringify(roadmapEdits));}if(obj.responseMapEdits){localStorage.setItem("ibmFBC_responseMap",JSON.stringify(obj.responseMapEdits));}applyMeta();render();save();alert("Canvas data imported.")}catch(err){alert("Could not import this JSON file.")}};r.readAsText(f);e.target.value=""}
 function resetView(){if(active==="roadmap"){if(confirm("Reset the roadmap to its original content?")){roadmapEdits=[];localStorage.removeItem("ibmFBC_roadmap");location.reload();}return;}if(active==="connections"){if(confirm("Reset the connection analysis to its original content?")){connectionEdits={};priorityScores={};localStorage.removeItem("ibmFBC_connections");localStorage.removeItem("ibmFBC_priorityScores");localStorage.removeItem("ibmFBC_responseMap");restoreResponseMap();renderConnections();}return;}if(confirm("Reset this view to its original first-draft content?")){const fresh=JSON.parse(JSON.stringify(initial));data[active]=fresh[active];render();save()}}
+function setPrintMode(){document.body.classList.remove("print-canvas","print-connections","print-roadmap");document.body.classList.add(active==="connections"?"print-connections":active==="roadmap"?"print-roadmap":"print-canvas");}
+window.addEventListener("beforeprint",setPrintMode);
+window.addEventListener("afterprint",()=>document.body.classList.remove("print-canvas","print-connections","print-roadmap"));
 const initial=JSON.parse(JSON.stringify(data));
 try{const saved=JSON.parse(localStorage.getItem("ibmFBC_v2")||"null");if(saved){if(saved.data){Object.assign(data,saved.data);if(saved.projectMeta)Object.assign(projectMeta,saved.projectMeta)}else{Object.assign(data,saved)}}}catch(e){}
 applyMeta();render();
